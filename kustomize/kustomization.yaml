@@ -10,4 +10,9 @@ helmCharts:
   namespace: argocd
   version: 8.0.3
   repo: https://argoproj.github.io/argo-helm
-  #valuesInline:
+  valuesInline:
+    configs:
+      cm:
+        resource.customizations.ignoreResourceUpdates.admissionregistration.k8s.io_MutatingWebhookConfiguration: |
+          jqPathExpressions:
+          - .webhooks[]?.clientConfig.caBundle
