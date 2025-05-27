@@ -22,6 +22,8 @@ helmCharts:
                 issuer: https://erikknudtson.cloudflareaccess.com/cdn-cgi/access/sso/oidc/f321cd5acc3ee2f29c08809d5ede2b6e2cff51aa0996bae0d6f677dd13e256a5
                 clientID: f321cd5acc3ee2f29c08809d5ede2b6e2cff51aa0996bae0d6f677dd13e256a5
                 clientSecret: $argocd-dex-oidc:clientSecret
+                # Since no email verification was involved in creating CF Access App, disable this:
+                insecureSkipEmailVerified: true 
         resource.customizations.ignoreDifferences.admissionregistration.k8s.io_MutatingWebhookConfiguration: |
           jqPathExpressions:
           - '.webhooks[]?.clientConfig.caBundle'
