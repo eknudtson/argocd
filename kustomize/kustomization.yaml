@@ -20,7 +20,3 @@ helmCharts:
         policy.default: role:readonly
     global:
       domain: argocd.erikknudtson.com
-    server:
-      ingress:
-        enabled: true
-        ingressClassName: traefik
