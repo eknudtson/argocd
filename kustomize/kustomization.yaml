@@ -22,6 +22,7 @@ helmCharts:
       domain: argocd.erikknudtson.com
 
 resources:
+- cloudflared.yaml
 - secrets.yaml
 - secretstore.yaml
 - serviceaccount.yaml
