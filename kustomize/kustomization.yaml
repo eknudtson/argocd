@@ -20,3 +20,6 @@ helmCharts:
         policy.default: role:readonly
     global:
       domain: argocd.erikknudtson.com
+
+resources:
+- secretstore.yaml
