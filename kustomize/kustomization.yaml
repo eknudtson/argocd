@@ -16,6 +16,15 @@ helmCharts:
         resource.customizations.ignoreDifferences.admissionregistration.k8s.io_MutatingWebhookConfiguration: |
           jqPathExpressions:
           - '.webhooks[]?.clientConfig.caBundle'
+      dex.config: |
+        connectors:
+          - type: oidc
+            id: oidc
+            name: OIDC
+            config:
+              issuer: https://erikknudtson.cloudflareaccess.com/cdn-cgi/access/sso/oidc/f321cd5acc3ee2f29c08809d5ede2b6e2cff51aa0996bae0d6f677dd13e256a5
+              clientID: f321cd5acc3ee2f29c08809d5ede2b6e2cff51aa0996bae0d6f677dd13e256a5
+              clientSecret: $argocd-dex-oidc:clientSecret
       rbac:
         policy.default: role:readonly
     global:
