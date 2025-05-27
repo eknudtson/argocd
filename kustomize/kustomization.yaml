@@ -31,6 +31,7 @@ helmCharts:
         policy.csv: |
           g, knudtson.erik@gmail.com, role:admin
         policy.default: role:readonly
+        scopes: "[email]"
     global:
       domain: argocd.erikknudtson.com
 
