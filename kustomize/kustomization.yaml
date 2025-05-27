@@ -23,3 +23,4 @@ helmCharts:
 
 resources:
 - secretstore.yaml
+- serviceaccount.yaml
