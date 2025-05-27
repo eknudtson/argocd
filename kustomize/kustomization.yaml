@@ -28,6 +28,8 @@ helmCharts:
           jqPathExpressions:
           - '.webhooks[]?.clientConfig.caBundle'
       rbac:
+        policy.csv: |
+          g, knudtson.erik@gmail.com, role:admin
         policy.default: role:readonly
     global:
       domain: argocd.erikknudtson.com
