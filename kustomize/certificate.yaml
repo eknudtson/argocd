@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-tls-certificates
+spec:
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  secretName: argocd-server-tls
+
+  isCA: false
+
+  usages:
+    - server auth
+    - client auth
+
+  subject:
+    organizations:
+      - cert-manager
+
+  dnsNames:
+    - argocd.erikknudtson.com
+    - argocd.private.erikknudtson.com
+
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
