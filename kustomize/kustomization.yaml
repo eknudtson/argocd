@@ -33,7 +33,7 @@ helmCharts:
         policy.default: role:readonly
         scopes: "[email]"
     global:
-      domain: argocd.erikknudtson.com
+      domain: argocd.private.erikknudtson.com
     server:
       service:
         annotations:
