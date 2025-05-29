@@ -41,7 +41,6 @@ helmCharts:
 
 resources:
 - certificate.yaml
-- cloudflared.yaml
 - secrets.yaml
 - secretstore.yaml
 - serviceaccount.yaml
