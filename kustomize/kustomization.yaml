@@ -34,6 +34,10 @@ helmCharts:
         scopes: "[email]"
     global:
       domain: argocd.erikknudtson.com
+    server:
+      service:
+        annotations:
+          external-dns.alpha.kubernetes.io/internal-hostname: "argocd.private.erikknudtson.com"
 
 resources:
 - cloudflared.yaml
