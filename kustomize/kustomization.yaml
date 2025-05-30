@@ -24,16 +24,7 @@ helmCharts:
                 clientSecret: $argocd-dex-oidc:clientSecret
                 # Since no email verification was involved in creating CF Access App, disable this:
                 insecureSkipEmailVerified: true
-        resource.customizations.ignoreDifferences.actions.github.com_AutoscalingListener: |
-          jsonPointers:
-          - /spec/preserveUnknownFields 
-        resource.customizations.ignoreDifferences.actions.github.com_AutoscalingRunnerSet: |
-          jsonPointers:
-          - /spec/preserveUnknownFields 
-        resource.customizations.ignoreDifferences.actions.github.com_EphemeralRunner: |
-          jsonPointers:
-          - /spec/preserveUnknownFields 
-        resource.customizations.ignoreDifferences.actions.github.com_EphemeralRunnerSet: |
+        resource.customizations.ignoreDifferences.apiextensions.k8s.io_CustomResourceDefinition: |
           jsonPointers:
           - /spec/preserveUnknownFields 
         resource.customizations.ignoreDifferences.admissionregistration.k8s.io_MutatingWebhookConfiguration: |
